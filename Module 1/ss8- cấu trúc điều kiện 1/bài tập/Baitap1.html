@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <h1>Tính chỉ số cân nặng </h1>
+  Nhập cân nặng :(kg) <input type="text" id="InputA"> <br> <br>
+  Nhập chỉ chiều cao :(m) <input type="text" id="InputB"> <br> <br>
+  <button onclick="ketqua()">kết quả</button>
+  <div id="result"></div>
+</body>
+</html>
+<script>
+  function ketqua(){
+    let weight = +document.getElementById('InputA').value;
+    let height = +document.getElementById('InputB').value;
+    let bmi = weight / (height*height);
+    let answer = document.getElementById('result');
+    if (bmi < 18.5){
+      answer.innerHTML = 'Underweight';
+    }
+    else if (bmi >= 18.5 && bmi < 25 ){
+      answer.innerHTML = 'Normal';
+    }
+    else if (bmi >= 25 && bmi < 30  ){
+      answer.innerHTML = 'Overweight';
+    }
+    else {
+      answer.innerHTML = 'Obese';
+    }
+
+  }
+
+</script>
